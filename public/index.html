@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bintang234</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Bintang234 🎰</h1>
+
+  <div id="auth">
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="register()">Daftar</button>
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div id="game" style="display:none;">
+    <p>Halo, <span id="userName"></span>! Saldo: <span id="saldo"></span></p>
+    <button onclick="topup()">Top Up +1000</button>
+    <hr>
+    
+    <h2>🎰 Slot</h2>
+    <input type="number" id="slotBet" placeholder="Taruhan" />
+    <button onclick="mainSlot()">Putar Slot</button>
+    <p id="slotHasil"></p>
+
+    <h2>🎯 Roulette</h2>
+    <input type="number" id="rouletteBet" placeholder="Taruhan" />
+    <input type="number" id="rouletteGuess" placeholder="Tebak Angka (0-36)" />
+    <button onclick="mainRoulette()">Putar Roulette</button>
+    <p id="rouletteHasil"></p>
+
+    <h2>🏆 Leaderboard</h2>
+    <ul id="leaderboard"></ul>
+
+    <h2>📜 Riwayat</h2>
+    <ul id="riwayat"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
