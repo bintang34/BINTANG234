@@ -1,0 +1,22 @@
+const db = require('better-sqlite3')('db.sqlite3');
+
+// Buat tabel users
+db.prepare(`CREATE TABLE IF NOT EXISTS users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username TEXT UNIQUE,
+  password TEXT,
+  balance INTEGER DEFAULT 1000
+)`).run();
+
+// Buat tabel riwayat
+db.prepare(`CREATE TABLE IF NOT EXISTS history (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER,
+  game TEXT,
+  bet INTEGER,
+  result TEXT,
+  win INTEGER,
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP
+)`).run();
+
+console.log("Migrasi database selesai!");
